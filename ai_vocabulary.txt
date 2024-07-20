@@ -1,0 +1,13 @@
+hardswish: to fit sigmoid function using three segments
+hardsigmoid
+depthwiseseparable conv
+adaptiveavgpool2d
+adaptivemaxpool2d
+WORLD_SIZE
+RANK
+h5py
+The WORLD_SIZE and RANK environment variables are indeed used in distributed training scenarios. WORLD_SIZE refers to the total number of processes participating in the training, which is typically the number of GPUs across all nodes. RANK is the unique identifier for each process involved in the training, ranging from 0 to WORLD_SIZE - 1.
+
+In the context of YOLOv5, these variables help manage multi-GPU training by coordinating the processes and ensuring they are aware of each other for synchronized operations.
+
+If you're training on a single machine with a single GPU, these variables are not necessary. They come into play when scaling up to multiple GPUs and/or multiple nodes.
